@@ -2,7 +2,7 @@
 
 #variables
 $username=Read-Host "Enter username"
-$path='OU=Disabled Users,DC=< domain controller name>,DC=local'
+$path='OU=Disabled Users,DC=< domain controller name >,DC=local'
 
 #imports AD module
 Import-Module ActiveDirectory
