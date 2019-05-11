@@ -1,25 +1,23 @@
 #active directory user onboarding
+#change < ... > info
 
 #variables
 $firstName=Read-Host "Enter first name"
 $lastName=Read-Host "Enter last name"
-$department=Read-Host "Enter department (General, Closing, IT or Accounting)"
-$ADOU='CN=Users,DC=geheren,DC=local'
+$department=Read-Host "Enter department (<enter options here>)"
+$ADOU='CN=Users,DC=<domain controller>,DC=local'
 $username=$firstName.substring(0,1).ToLower()+$lastName.ToLower()
 $fullName=($firstName + " " + $lastName)
 
-#department memberships
-if($department="General"){
-    $membership = "E Drive Access"
+#department shared folder access
+if($department="<department>"){
+    $membership = "<shared folder>"
     }
-if($department="Closing"){
-    $membership = "E Drive Access", "Accounting Access"
+if($department="<department>"){
+    $membership = "<shared folder>"
     }
-if($department="IT"){
-    $membership = "E Drive Access", "E Drive Admin Access", "Accounting Access"
-    }
-if($department="Accounting"){
-    $membership = "E Drive Access", "Accounting Access"
+if($department="<department>"){
+    $membership = "<shared folder>"
     }
 
 #imports AD module
